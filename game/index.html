@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Curious House — Spot the Difference</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <header class="hud">
+    <div class="brand">
+      <h1>The Curious House</h1>
+      <p id="level-name">Room 1 of 3 — The Study</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="stat-label">Time</span><span id="timer" class="stat-value">2:30</span></div>
+      <div class="stat"><span class="stat-label">Score</span><span id="score" class="stat-value">0</span></div>
+      <div class="stat wide"><span class="stat-label">Found</span><span id="counter" class="stat-value">0 found · 7 to go</span></div>
+    </div>
+  </header>
+
+  <div class="rooms">
+    <span class="level-dot" data-room="1">1 · The Study</span>
+    <span class="level-dot" data-room="2">2 · The Greenhouse</span>
+    <span class="level-dot" data-room="3">3 · The Night Attic</span>
+  </div>
+
+  <main class="boards">
+    <section class="panel" id="panel-left" aria-label="Left picture">
+      <div class="panel-tag">Left — the original</div>
+    </section>
+    <section class="panel" id="panel-right" aria-label="Right picture">
+      <div class="panel-tag">Right — something changed</div>
+    </section>
+  </main>
+
+  <footer class="controls">
+    <button id="hint-btn" type="button">Hint (3)</button>
+    <button id="mute-btn" type="button">Sound: on</button>
+    <button id="restart-btn" type="button">Restart room</button>
+    <p class="keys">Click a difference on either picture · <kbd>H</kbd> hint · <kbd>M</kbd> sound · <kbd>R</kbd> restart · <kbd>Enter</kbd> continue</p>
+  </footer>
+</div>
+
+<div class="overlay" id="overlay-title">
+  <div class="card">
+    <h2>The Curious House</h2>
+    <p class="tagline">Three rooms. Twenty-nine small lies. Find them all before the clock runs out.</p>
+    <p>Two pictures hang side by side. They look the same — they are not. Click a difference on either picture to circle it. A wrong click costs 3 seconds. A hint pulses one difference still hiding, and you have three per room. The rooms get harder: 7 differences in the Study, 10 in the Greenhouse, 12 in the Night Attic.</p>
+    <button id="start-btn" type="button" class="primary">Start hunting</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay-complete">
+  <div class="card">
+    <h2 id="complete-title">Room cleared!</h2>
+    <p id="complete-body"></p>
+    <button id="next-btn" type="button" class="primary">Next room</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay-fail">
+  <div class="card">
+    <h2>Time’s up</h2>
+    <p id="fail-body"></p>
+    <button id="retry-btn" type="button" class="primary">Try this room again</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay-results">
+  <div class="card">
+    <h2>The house is solved!</h2>
+    <p id="results-body"></p>
+    <button id="again-btn" type="button" class="primary">Play again</button>
+  </div>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
